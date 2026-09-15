@@ -1,6 +1,6 @@
 # SC4001 Notes
 
-## `2/` — single-neuron gradient descent examples
+## `Lab 2/` — single-neuron gradient descent examples
 
 Each numbered example (2.2, 2.3) has an `a`/`b` pair that keeps the same
 underlying problem but swaps out one implementation detail, so you can
@@ -8,7 +8,7 @@ compare the two approaches side by side.
 
 ### 2.2 — logistic regression neuron
 
-[`eg2.2a.ipynb`](2/eg2.2a.ipynb) vs [`eg2.2b.ipynb`](2/eg2.2b.ipynb) — same
+[`eg2.2a.ipynb`](eg2.2a.ipynb) vs [`eg2.2b.ipynb`](eg2.2b.ipynb) — same
 neuron and training data, but 2.2a derives gradients by hand while 2.2b lets
 PyTorch autograd compute them.
 
@@ -19,7 +19,7 @@ u = X·w + b            (pre-activation / logit)
 f(u) = 1 / (1 + e^-u)  (sigmoid → predicted probability)
 ```
 
-**[eg2.2a.ipynb](2/eg2.2a.ipynb) — manual gradients**
+**[eg2.2a.ipynb](eg2.2a.ipynb) — manual gradients**
 
 Cross-entropy loss, computed by hand:
 
@@ -52,7 +52,7 @@ def train(model, inputs, targets, learning_rate):
   model.b -= learning_rate * grad_b
 ```
 
-**[eg2.2b.ipynb](2/eg2.2b.ipynb) — autograd**
+**[eg2.2b.ipynb](eg2.2b.ipynb) — autograd**
 
 Same loss, but via PyTorch's built-in `nn.BCELoss()` (binary cross-entropy),
 and the weight update comes from `.backward()` instead of a hand-coded
@@ -80,11 +80,11 @@ def train(model, inputs, targets, learning_rate):
 
 ### 2.3 — regression neuron, learning-rate sweep
 
-[`eg2.3a.py`](2/eg2.3a.py) vs [`eg2.3b.py`](2/eg2.3b.py) — same neuron,
+[`eg2.3a.py`](eg2.3a.py) vs [`eg2.3b.py`](eg2.3b.py) — same neuron,
 same 4 learning rates swept in parallel via `multiprocessing.Pool`, but they
 differ in _when_ the weights get updated within an epoch.
 
-**[eg2.3a.py](2/eg2.3a.py) — stochastic gradient descent (update per sample)**
+**[eg2.3a.py](eg2.3a.py) — stochastic gradient descent (update per sample)**
 
 ```python
 def my_train(alpha):
@@ -103,7 +103,7 @@ def my_train(alpha):
   return cost
 ```
 
-**[eg2.3b.py](2/eg2.3b.py) — batch gradient descent (update per epoch)**
+**[eg2.3b.py](eg2.3b.py) — batch gradient descent (update per epoch)**
 
 ```python
 def my_train(rate):
