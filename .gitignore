@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Environments
+anaconda_projects/
+venv/
+env/
+*.egg-info/
+
+# Data and model files
+*.csv
+*.npy
+*.npz
+*.pt
+*.pth
+*.h5
+*.ckpt
+data/
+datasets/
+checkpoints/
+models/
+
+# OS/editor junk
+.DS_Store
+.vscode/
+*.log
